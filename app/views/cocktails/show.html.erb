@@ -1,0 +1,38 @@
+
+ <div class="card-category my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+  <%= @cocktail.name %>
+  </div>
+<div class="container text-center">
+
+
+  <div class="card_review text-center my-5">
+    <h4>Ingredient</h4>
+    <div class="cards_ingredient my-5">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="card card_ingredient text-center mx-2" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text"><%= dose.description %>cl</p>
+          <p class="card-text"><%= dose.ingredient.name %></p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="add justify-center">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <button class="btn btn-success" type="submit">Create</button>
+  <% end %>
+  </div>
+
+
+  <div class="text-center">
+    <p><%= link_to "Update recipe", new_cocktail_dose_path(@cocktail) %></p>
+  </div>
+    <div class="text-center">
+    <p><%= link_to "Back to cocktails List", cocktails_path %></p>
+  </div>
+
+</div>

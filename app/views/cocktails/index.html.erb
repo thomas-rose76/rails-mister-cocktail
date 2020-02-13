@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="my-5">Cocktails</h1>
+
+  <div class="cards">
+    <%= link_to new_cocktail_path do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1505868423131-d426643afa77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80)">
+      ✚
+    </div>
+    <% end %>
+
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)">
+      <%= cocktail.name %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+
+</div>

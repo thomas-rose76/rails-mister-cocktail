@@ -8,12 +8,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', difer: true %>
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+       <a class="navbar-brand" href="#">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/511Uh-pXyjL._AC_SX522_.jpg" />
+      </a>
+    </div>
+
     <%= yield %>
-    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
-    <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
 </html>
