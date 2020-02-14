@@ -5,6 +5,7 @@
   <div class="add justify-center">
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
       <button class="btn btn-success" type="submit">Create</button>
   <% end %>
   </div>
